@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niko Auto Core USA | Admin Upload</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <div class="logo"><span>NIKO</span> AUTO CORE <b>USA</b></div>
+    <div class="nav-links">
+      <a href="index.html">Customer Search</a>
+      <a href="admin.html">Admin Upload</a>
+    </div>
+  </nav>
+</header>
+
+<section class="section">
+  <p class="eyebrow">Admin Panel</p>
+  <h1 class="page-title">Upload Daily Excel Price List</h1>
+
+  <div id="loginBox" class="admin-card">
+    <h2>Admin Login</h2>
+    <input id="passwordInput" class="full-input" type="password" placeholder="Admin password" />
+    <button class="btn primary full-btn" onclick="login()">Login</button>
+    <p class="note">Default password: <b>niko123</b>. You can change it in admin.js.</p>
+  </div>
+
+  <div id="adminBox" class="admin-card hidden">
+    <h2>Upload .xlsx Price List</h2>
+    <p class="note">
+      Excel needs columns like: <b>Product</b> and <b>Price</b>.
+      It also accepts <b>Serial</b>, <b>Code</b>, or <b>Value</b>.
+    </p>
+
+    <input id="xlsxFile" class="file-input" type="file" accept=".xlsx,.xls" />
+    <button class="btn primary" onclick="uploadExcel()">Update Prices</button>
+    <button class="btn secondary" onclick="clearPrices()">Clear Saved Prices</button>
+
+    <div id="uploadStatus" class="result">No file uploaded yet.</div>
+
+    <h2>Preview</h2>
+    <div class="table-wrap">
+      <table id="previewTable">
+        <thead>
+          <tr><th>Product</th><th>Price</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <p class="disclaimer">
+      This static version saves prices in this browser. For all customers online, connect this to Supabase/GitHub database.
+    </p>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> Niko Auto Core USA</footer>
+<script src="script.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
