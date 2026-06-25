@@ -2,7 +2,7 @@ Niko Auto Core USA - Excel Upload Website
 
 How it works:
 1. Open admin.html
-2. Login with password: niko123
+2. Login with password: mafija1
 3. Upload Excel .xlsx file
 4. Excel needs columns: Product and Price
    Also accepted: Serial/Code and Value
